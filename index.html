@@ -1,0 +1,113 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!-- Title -->
+    <title>Home</title>
+</head>
+
+<body>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-10">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-md-12">
+                <div class="row question-card">
+                    <div class="col-sm-6 col-md-6 col-lg-12 question-text">
+                        Question
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-12 question-no">
+                        <strong>01/02</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-12">
+                <div class="row question-details-card">
+                    <div class="col-sm-12 space-bottom" style="margin-top: 10px;">
+                        Below are three options on how to respond to the scenario above. Image question the client side pings you and tells that they have a personal emergency and will need to be away from work
+                    </div>
+                    <div class="col-sm-12 space-bottom">
+                        You will...
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 space-bottom below-text" style="padding-left: 0px;">
+                        Below are three options on how to respond to the scenario above. Please choose the response that resonates most with you and click <strong>Next</strong> to proceed.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 justify-content-center checkbox-content" style="padding: 15px;">
+                <label for="myCheckbox1" class="checkbox-image"><img class="checkbox-img-src" src="img/Iron_man.jpg" /></label>
+                <input type="checkbox" name="myCheckbox1" value="1" class="checkbox-btn" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 justify-content-center checkbox-content" style="padding: 15px;">
+                <label for="myCheckbox1" class="checkbox-image"><img class="checkbox-img-src" src="img/Complex_eLearning.png" /></label>
+                <input type="checkbox" name="myCheckbox1" value="1" class="checkbox-btn">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 justify-content-center checkbox-content" style="padding: 15px;">
+                <label for="myCheckbox1" class="checkbox-image"><img class="checkbox-img-src" src="img/ELearning.png" /></label>
+                <input type="checkbox" name="myCheckbox1" value="1" class="checkbox-btn" />
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 justify-content-center checkbox-content" style="padding: 15px;">
+                <label for="myCheckbox1" class="checkbox-image"><img class="checkbox-img-src" src="img/Medium_Complexity.png" /></label>
+                <input type="checkbox" name="myCheckbox1" value="1" class="checkbox-btn" />
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <button id="submit-btn" type="submit" class="btn btn-success btn-block" disabled>
+                    <strong>Submit</strong>                    
+                </button>
+            </div>
+        </div>
+
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $("input:checkbox").on('click', function() {
+            var $box = $(this);
+            if ($box.is(":checked")) {
+                var group = "button[id='submit-btn']:submit";
+                $(group).prop("disabled", false);
+            } else {
+                var isTrue = $("input[name='myCheckbox1']:checked").length;
+                console.log('isTrue : ', isTrue);
+                // $(group).prop("disabled", false);
+                if (!isTrue) {
+                    var group = "button:submit";
+                    $(group).prop("disabled", true);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
